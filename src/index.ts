@@ -14,4 +14,18 @@ const createWindow = () => {
 
 app.whenReady().then(() => {
   createWindow()
+
+  // アクティブになった時にBrowserWindowがない場合はウィンドウを作成する
+  app.on('active', () => {
+    if (BrowserWindow.getAllWindows().length === 0) {
+      createWindow()
+    }
+  })
+})
+
+// macOSの場合は、ウィンドウが閉じられてもアプリケーションを終了しない
+app.on('window-all-closed', () => {
+  if (process.platform !== 'darwin') {
+    app.quit()
+  }
 })
