@@ -1,0 +1,14 @@
+{
+  "name": "electron-zero",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^5.6.2"
+  },
+  "private": true
+}
