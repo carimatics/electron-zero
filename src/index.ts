@@ -1,6 +1,7 @@
 const {
   app, // アプリケーションのイベントライフサイクルを制御する
-  BrowserWindow // ウィンドウを作成、管理するクラス
+  BrowserWindow, // ウィンドウを作成、管理するクラス
+  ipcMain,
 } = require('electron')
 const path = require('node:path')
 
@@ -18,6 +19,8 @@ const createWindow = () => {
 
 app.whenReady().then(() => {
   createWindow()
+
+  ipcMain.handle('ping', () => 'pong')
 
   // アクティブになった時にBrowserWindowがない場合はウィンドウを作成する
   app.on('active', () => {
