@@ -6,8 +6,8 @@
   "scripts": {
     "build": "tsc"
   },
-  "dependencies": {},
   "devDependencies": {
+    "electron": "^32.1.2",
     "typescript": "^5.6.2"
   },
   "private": true
